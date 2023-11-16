@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
        // Update is called once per frame
     void Update()
     {
-        ProcessInputs();
+        ProcessInputs();    
     }
     private void FixedUpdate()
     {
@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
             // Camera Lerp
 
             Vector3 cam = CamControllerFocus.transform.position = new Vector3(x - 2, y, z);
+
             CamControllerFocus.transform.position = Vector3.Lerp(Vec1, cam, 10*Time.deltaTime);
 
 
@@ -105,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
             // lerp
             Vector3 cam = CamControllerFocus.transform.position = new Vector3(x + 2, y, z);
+
             CamControllerFocus.transform.position = Vector3.Lerp(Vec1, cam, 10 * Time.deltaTime);
             // old way >.< CamControllerFocus.transform.SetPositionAndRotation(Vector3.Lerp(new Vector3(transform.position.x + 2, transform.position.y, CAM.transform.position.z), new Vector3(transform.position.x - 2, transform.position.y, CAM.transform.position.z), Time.deltaTime), Quaternion.identity);
         }

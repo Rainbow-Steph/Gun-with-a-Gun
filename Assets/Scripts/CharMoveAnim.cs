@@ -16,7 +16,7 @@ public class CharMoveAnim : MonoBehaviour
         // Gets inputs from the Movement/Input scripts~
     {
         Movement = FindObjectOfType<Movement>();
-        Debug.Log(Movement + " Script Loaded");
+        Debug.Log(Movement + " Script Loaded in " + this.GetComponent<MonoBehaviour>());
     }
 
     // Update is called once per frame
