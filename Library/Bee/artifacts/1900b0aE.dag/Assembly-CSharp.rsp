@@ -392,7 +392,6 @@
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/Unrevised Code/Bullet.cs"
 "Assets/Scripts/Unrevised Code/EnemyLogic.cs"
-"Assets/Scripts/Unrevised Code/Player Movement.cs"
 "Assets/Scripts/Unrevised Code/Shooting.cs"
 -langversion:9.0
 

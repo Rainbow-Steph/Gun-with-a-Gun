@@ -35,7 +35,8 @@ public class Bullet : MonoBehaviour
                     GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
                     Destroy(effect, 5f);
                     Destroy(gameObject);
-                }
+            Debug.Log("Hit  " + collision.collider.gameObject.name);
+        }
 
             // quaternion.identity = este objeto no ta rotado
     }

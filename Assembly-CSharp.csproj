@@ -62,7 +62,6 @@
     <Compile Include="Assets\Scripts\CharMoveAnim.cs" />
     <Compile Include="Assets\Scripts\Unrevised Code\Shooting.cs" />
     <Compile Include="Assets\Scripts\Unrevised Code\EnemyLogic.cs" />
-    <Compile Include="Assets\Scripts\Unrevised Code\Player Movement.cs" />
     <Compile Include="Assets\Scripts\Unrevised Code\Bullet.cs" />
     <Compile Include="Assets\GunControl.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />

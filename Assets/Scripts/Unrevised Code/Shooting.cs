@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
 
     public float bulletForce = 20f;
 
     public AudioSource BANG;
 
+
+   
     // Update is called once per frame
     void Update()
     {
@@ -24,9 +26,9 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(FirePoint.right * bulletForce, ForceMode2D.Impulse);
 
         BANG.Play ();
     }
