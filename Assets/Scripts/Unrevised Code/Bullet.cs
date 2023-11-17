@@ -6,39 +6,60 @@ public class Bullet : MonoBehaviour
 {
     public EnemyLogic EnemyState;
     public GameObject HitEffect;
-    public GameObject E;
+    
+    public Collision2D Impacted;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        Impacted = collision;
         
-        if (collision.collider.tag == "Enemy")
+        if (collision.collider.CompareTag("Enemy"))
         {
-            GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
-            Animator Death = collision.collider.gameObject.GetComponent<Animator>();
-            Death.SetBool("Dead", true);
+            KillIt();
+            Impact();
+        }
 
-            Debug.Log("Killed " + collision.collider.gameObject.name);
-            collision.collider.gameObject.layer = 3;
+        else 
+        {
+            Impact(); 
+        }
 
-            E = collision.collider.gameObject;
-            //Debug.Log(collision.collider.GetComponentInChildren < "Enemy React Zone" >);
-            EnemyState = E.GetComponentInChildren<EnemyLogic>();
-            EnemyState.Alive = false;
-            collision.collider.attachedRigidbody.velocity = new Vector2(0, 0);
+            
+    }
 
-            Destroy(effect, 5f);
-            Destroy(gameObject);
+    void Impact()
+        // Impacts the target 
+    {
+        // Run Impact Anim
+        GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
+
+        // Debugs target hit
+        Debug.Log("Hit " + Impacted.collider.gameObject.name + " with " + gameObject.name);
+
+        // Removes Bullet
+        Destroy(effect, 5f);
+        Destroy(gameObject);
+    }
+    
+    void KillIt()
+    // Kills the enemy target
+    {
+        // Enables trigger for death anim 
+        Animator Death = Impacted.collider.gameObject.GetComponent<Animator>();
+        Death.SetBool("Dead", true);
+
+        // Sends object to 'dead' background layer
+        Impacted.collider.gameObject.layer = 3;
+
+        // Changes alive state to death in enemy prefab logic
+        EnemyState = Impacted.collider.gameObject.GetComponentInChildren<EnemyLogic>();
         
-        }
+        EnemyState.Alive = false;
 
-            else {
-                    GameObject effect = Instantiate(HitEffect, transform.position, Quaternion.identity);
-                    Destroy(effect, 5f);
-                    Destroy(gameObject);
-            Debug.Log("Hit  " + collision.collider.gameObject.name);
-        }
+        // resets enemy speed so it doesn't ragdoll away
+        Impacted.collider.attachedRigidbody.velocity = new Vector2(0, 0);
 
-            // quaternion.identity = este objeto no ta rotado
     }
 
 

@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 20f;
 
-    public AudioSource BANG;
+    public AudioSource ShootingSound;
 
 
    
@@ -18,7 +18,6 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            // esto quizas es util InvokeRepeating("Shoot", 1, 2);
             Shoot();
         }
     }
@@ -30,6 +29,6 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.right * bulletForce, ForceMode2D.Impulse);
 
-        BANG.Play ();
+        ShootingSound.Play ();
     }
 }

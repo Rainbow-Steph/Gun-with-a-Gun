@@ -58,13 +58,13 @@
     <Analyzer Include="D:\UNITY\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GunControl.cs" />
     <Compile Include="Assets\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CharMoveAnim.cs" />
-    <Compile Include="Assets\Scripts\Unrevised Code\Shooting.cs" />
     <Compile Include="Assets\Scripts\Unrevised Code\EnemyLogic.cs" />
-    <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Unrevised Code\Bullet.cs" />
+    <Compile Include="Assets\GunControl.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Shooting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Temp Assets\MAPITA\Tilesheet.txt" />

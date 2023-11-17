@@ -46,7 +46,7 @@ public class EnemyLogic : MonoBehaviour
     {
         if (WithinRange == true) 
         {
-                        Attacking();
+                        // Attacking();
         }
     }
 

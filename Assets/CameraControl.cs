@@ -108,9 +108,14 @@ public class CameraControl : MonoBehaviour
 
                 t = Mathf.Pow(t, 1.2f);
 
+                // Camera Recenters
+                Vector3 TargetCamPos = new Vector3(x, y, z);
+                MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, TargetCamPos, t);
+                
+                // Lerp Zoom Out
                 CamControls.orthographicSize = Mathf.Lerp(CamControls.orthographicSize, FarDistance, t);
-
-               // Debug.Log("Current Time = " + CurrentTime);
+                
+                // Debug.Log("Current Time = " + CurrentTime);
 
             }          
         }
